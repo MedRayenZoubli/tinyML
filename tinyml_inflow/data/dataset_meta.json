@@ -1,0 +1,85 @@
+{
+  "seed": 42,
+  "episodes": 600,
+  "steps_per_episode": 192,
+  "stride": 2,
+  "catchment": {
+    "area_m2": 120000.0,
+    "imperv_frac": 0.35,
+    "imperv_runoff_coef": 0.9,
+    "f0_mm_hr": 40.0,
+    "fc_mm_hr": 4.0,
+    "horton_k": 4.0,
+    "k_wet": 2.5,
+    "k_dry_per_hr": 0.03,
+    "uh_shape": 3.0,
+    "uh_tp_steps": 6.0,
+    "uh_len": 60,
+    "base_q_m3_s": 0.015,
+    "v_cap_m3": 4000.0,
+    "q_max_m3_s": 0.6
+  },
+  "splits": {
+    "train": {
+      "samples": 30660,
+      "x_shape": [
+        30660,
+        24,
+        4
+      ],
+      "y_shape": [
+        30660,
+        24
+      ],
+      "share_with_storm_inflow": 0.4666666666666667
+    },
+    "val": {
+      "samples": 6570,
+      "x_shape": [
+        6570,
+        24,
+        4
+      ],
+      "y_shape": [
+        6570,
+        24
+      ],
+      "share_with_storm_inflow": 0.46316590563165905
+    },
+    "test": {
+      "samples": 6570,
+      "x_shape": [
+        6570,
+        24,
+        4
+      ],
+      "y_shape": [
+        6570,
+        24
+      ],
+      "share_with_storm_inflow": 0.4497716894977169
+    }
+  },
+  "scaler": {
+    "feature_names": [
+      "precip_rate_mm_hr",
+      "basin_volume_m3",
+      "discharge_m3_s",
+      "soil_saturation_pct"
+    ],
+    "feature_min": [
+      0.0,
+      0.0,
+      0.0009698671638034284,
+      10.514439582824707
+    ],
+    "feature_max": [
+      156.2333526611328,
+      4000.0,
+      0.6202093958854675,
+      80.96356964111328
+    ],
+    "target_min": 0.009096939116716385,
+    "target_max": 3.934957504272461
+  }
+}

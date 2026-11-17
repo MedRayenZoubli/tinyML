@@ -1,0 +1,242 @@
+{
+  "episodes": 10,
+  "source_steps_per_episode": 192,
+  "physics_steps_per_episode": 960,
+  "seed": 42,
+  "controller": {
+    "objective": "zero overflow in feasible storms, then minimize discharge",
+    "preferred_volume_percent": 50.0,
+    "maximum_volume_percent": 70.0,
+    "max_discharge_m3_s": 0.6,
+    "physics_interval_minutes": 1,
+    "model_interval_minutes": 5,
+    "forecast_scenarios": [
+      0.8,
+      1.0,
+      1.25,
+      1.5
+    ],
+    "valve_deadband_percent": 5.0,
+    "model": "full INT8 inflow forecast"
+  },
+  "totals": {
+    "overflow_events_feasible": 0,
+    "infeasible_storms": 3,
+    "feasible_storms": 7,
+    "max_volume_percent": 100.0,
+    "mean_discharge_m3_s": 0.08546458079945296,
+    "max_discharge_m3_s": 0.6000000238418579,
+    "mean_forecast_mae_m3_s": 0.08328222012574933,
+    "mean_recovery_minutes": 592.0
+  },
+  "episodes_detail": [
+    {
+      "start_volume_percent": 12.80775938786674,
+      "max_volume_m3": 2731.67236328125,
+      "max_volume_percent": 68.29180908203125,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": false,
+      "emergency_steps": 0,
+      "mean_discharge_m3_s": 0.14097803831100464,
+      "max_discharge_m3_s": 0.47769153118133545,
+      "mean_valve_opening": 0.3583333194255829,
+      "mean_forecast_mae_m3_s": 0.07990756560295811,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 40,
+        "deadband_hold": 45,
+        "maximum_release_required": 33,
+        "anticipatory_release": 74
+      }
+    },
+    {
+      "start_volume_percent": 14.423230241834496,
+      "max_volume_m3": 2292.311767578125,
+      "max_volume_percent": 57.30779266357422,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": false,
+      "emergency_steps": 0,
+      "mean_discharge_m3_s": 0.05401182174682617,
+      "max_discharge_m3_s": 0.38758906722068787,
+      "mean_valve_opening": 0.15807291865348816,
+      "mean_forecast_mae_m3_s": 0.078826646408588,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 37,
+        "deadband_hold": 68,
+        "maximum_release_required": 11,
+        "anticipatory_release": 76
+      }
+    },
+    {
+      "start_volume_percent": 16.472509065746866,
+      "max_volume_m3": 1683.0711669921875,
+      "max_volume_percent": 42.076778411865234,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": false,
+      "emergency_steps": 0,
+      "mean_discharge_m3_s": 0.01513452548533678,
+      "max_discharge_m3_s": 0.27203288674354553,
+      "mean_valve_opening": 0.06328125298023224,
+      "mean_forecast_mae_m3_s": 0.078020283569702,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 16,
+        "deadband_hold": 169,
+        "maximum_release_required": 7
+      }
+    },
+    {
+      "start_volume_percent": 22.801108954815348,
+      "max_volume_m3": 2787.16015625,
+      "max_volume_percent": 69.67900085449219,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": false,
+      "emergency_steps": 0,
+      "mean_discharge_m3_s": 0.14646263420581818,
+      "max_discharge_m3_s": 0.494570791721344,
+      "mean_valve_opening": 0.38593751192092896,
+      "mean_forecast_mae_m3_s": 0.10737524466981187,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 26,
+        "deadband_hold": 25,
+        "maximum_release_required": 44,
+        "anticipatory_release": 97
+      }
+    },
+    {
+      "start_volume_percent": 24.411659194874147,
+      "max_volume_m3": 1487.66259765625,
+      "max_volume_percent": 37.191566467285156,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": false,
+      "emergency_steps": 0,
+      "mean_discharge_m3_s": 0.002826291834935546,
+      "max_discharge_m3_s": 0.2964489459991455,
+      "mean_valve_opening": 0.00989583320915699,
+      "mean_forecast_mae_m3_s": 0.06830014212231116,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 5,
+        "deadband_hold": 187
+      }
+    },
+    {
+      "start_volume_percent": 19.999033501621255,
+      "max_volume_m3": 4000.0,
+      "max_volume_percent": 100.0,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": true,
+      "emergency_steps": 132,
+      "mean_discharge_m3_s": 0.1355263739824295,
+      "max_discharge_m3_s": 0.6000000238418579,
+      "mean_valve_opening": 0.2809895873069763,
+      "mean_forecast_mae_m3_s": 0.08275813554276595,
+      "early_warning_minutes": -149,
+      "recovery_minutes": 592,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 36,
+        "deadband_hold": 41,
+        "maximum_release_required": 15,
+        "emergency_override": 26,
+        "anticipatory_release": 74
+      }
+    },
+    {
+      "start_volume_percent": 11.00528764309711,
+      "max_volume_m3": 2401.630126953125,
+      "max_volume_percent": 60.04075241088867,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": false,
+      "emergency_steps": 0,
+      "mean_discharge_m3_s": 0.06487517803907394,
+      "max_discharge_m3_s": 0.37440380454063416,
+      "mean_valve_opening": 0.20130208134651184,
+      "mean_forecast_mae_m3_s": 0.06325424580992653,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 55,
+        "deadband_hold": 98,
+        "maximum_release_required": 5,
+        "anticipatory_release": 34
+      }
+    },
+    {
+      "start_volume_percent": 22.739606238613955,
+      "max_volume_m3": 1864.206298828125,
+      "max_volume_percent": 46.60515594482422,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": false,
+      "emergency_steps": 0,
+      "mean_discharge_m3_s": 0.011010948568582535,
+      "max_discharge_m3_s": 0.2861163914203644,
+      "mean_valve_opening": 0.03072916716337204,
+      "mean_forecast_mae_m3_s": 0.07370946125147433,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 58,
+        "deadband_hold": 134
+      }
+    },
+    {
+      "start_volume_percent": 21.725332575629555,
+      "max_volume_m3": 3212.2275390625,
+      "max_volume_percent": 80.3056869506836,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": true,
+      "emergency_steps": 87,
+      "mean_discharge_m3_s": 0.11676669865846634,
+      "max_discharge_m3_s": 0.5376806259155273,
+      "mean_valve_opening": 0.29088541865348816,
+      "mean_forecast_mae_m3_s": 0.0785806344014339,
+      "early_warning_minutes": null,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 8,
+        "deadband_hold": 127,
+        "maximum_release_required": 34,
+        "emergency_override": 18,
+        "anticipatory_release": 5
+      }
+    },
+    {
+      "start_volume_percent": 14.068121118229959,
+      "max_volume_m3": 4000.0,
+      "max_volume_percent": 100.0,
+      "overflow_events": 0,
+      "infeasible_with_fixed_outlet": true,
+      "emergency_steps": 187,
+      "mean_discharge_m3_s": 0.16705329716205597,
+      "max_discharge_m3_s": 0.6000000238418579,
+      "mean_valve_opening": 0.37057292461395264,
+      "mean_forecast_mae_m3_s": 0.1220898418785213,
+      "early_warning_minutes": -202,
+      "recovery_minutes": null,
+      "control_reasons": {
+        "warmup_scenario_control": 23,
+        "forecast_safe": 12,
+        "deadband_hold": 88,
+        "maximum_release_required": 24,
+        "emergency_override": 37,
+        "anticipatory_release": 31
+      }
+    }
+  ]
+}

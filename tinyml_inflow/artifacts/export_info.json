@@ -1,0 +1,33 @@
+{
+  "tflite_bytes": 11320,
+  "input_scale": 0.003921568859368563,
+  "input_zero_point": -128,
+  "output_scale": 0.00231761671602726,
+  "output_zero_point": -120,
+  "calibration_samples": 100,
+  "tensor_arena_budget_bytes": 32768,
+  "inspection": {
+    "ops_in_order": [
+      "RESHAPE",
+      "CONV_2D",
+      "MAX_POOL_2D",
+      "CONV_2D",
+      "RESHAPE",
+      "FULLY_CONNECTED",
+      "FULLY_CONNECTED"
+    ],
+    "unique_ops": [
+      "RESHAPE",
+      "CONV_2D",
+      "MAX_POOL_2D",
+      "FULLY_CONNECTED"
+    ],
+    "resolver_calls": [
+      "AddReshape",
+      "AddConv2D",
+      "AddMaxPool2D",
+      "AddFullyConnected"
+    ],
+    "activation_bytes_upper_bound": 1016
+  }
+}

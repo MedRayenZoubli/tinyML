@@ -1,0 +1,23 @@
+{
+  "feature_names": [
+    "precip_rate_mm_hr",
+    "basin_volume_m3",
+    "discharge_m3_s",
+    "soil_saturation_pct"
+  ],
+  "feature_min": [
+    0.0,
+    0.0,
+    0.0009698671638034284,
+    10.514439582824707
+  ],
+  "feature_max": [
+    156.2333526611328,
+    4000.0,
+    0.6202093958854675,
+    80.96356964111328
+  ],
+  "target_name": "inflow_m3_s",
+  "target_min": 0.009096939116716385,
+  "target_max": 3.934957504272461
+}
