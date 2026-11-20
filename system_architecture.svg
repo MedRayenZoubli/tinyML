@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .title { font-family: Aptos, Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #17365D; }
+      .stage { font-family: Aptos, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #17365D; }
+      .item { font-family: Aptos, Arial, sans-serif; font-size: 18px; fill: #24364B; }
+      .small { font-family: Aptos, Arial, sans-serif; font-size: 15px; fill: #4A5A6A; }
+      .node { font-family: Aptos, Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #FFFFFF; }
+      .note { font-family: Aptos, Arial, sans-serif; font-size: 14px; fill: #617187; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#3182CE"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#17365D" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  <text x="800" y="58" class="title" text-anchor="middle">Preemptive Urban Stormwater Gateway</text>
+  <text x="800" y="88" class="note" text-anchor="middle">Two-node edge architecture: deterministic real-time control + computer-vision processing</text>
+
+  <!-- Stage 1 -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="135" width="1440" height="130" rx="18" fill="#FFFFFF" stroke="#B8C7DA" stroke-width="2"/>
+  </g>
+  <rect x="80" y="135" width="260" height="130" rx="18" fill="#17365D"/>
+  <text x="210" y="183" class="node" text-anchor="middle">STAGE 1</text>
+  <text x="210" y="218" class="node" text-anchor="middle">Sensing Layer</text>
+  <rect x="385" y="165" width="250" height="70" rx="12" fill="#EAF3FF" stroke="#91B6DF"/>
+  <text x="510" y="194" class="item" text-anchor="middle">Rainfall / flow</text>
+  <text x="510" y="221" class="small" text-anchor="middle">analogue inputs</text>
+  <rect x="665" y="165" width="250" height="70" rx="12" fill="#EAF3FF" stroke="#91B6DF"/>
+  <text x="790" y="194" class="item" text-anchor="middle">Basin water level</text>
+  <text x="790" y="221" class="small" text-anchor="middle">ultrasonic sensor</text>
+  <rect x="945" y="165" width="250" height="70" rx="12" fill="#EAF3FF" stroke="#91B6DF"/>
+  <text x="1070" y="194" class="item" text-anchor="middle">Soil saturation</text>
+  <text x="1070" y="221" class="small" text-anchor="middle">analogue sensor</text>
+  <rect x="1225" y="165" width="245" height="70" rx="12" fill="#FFF2E8" stroke="#DCA978"/>
+  <text x="1347" y="194" class="item" text-anchor="middle">Outlet camera</text>
+  <text x="1347" y="221" class="small" text-anchor="middle">Raspberry Pi camera</text>
+
+  <path d="M800 265 L800 305" fill="none" stroke="#3182CE" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2 -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="305" width="1440" height="200" rx="18" fill="#FFFFFF" stroke="#B8C7DA" stroke-width="2"/>
+  </g>
+  <rect x="80" y="305" width="260" height="200" rx="18" fill="#17365D"/>
+  <text x="210" y="358" class="node" text-anchor="middle">STAGE 2</text>
+  <text x="210" y="393" class="node" text-anchor="middle">Intelligent Edge</text>
+  <text x="210" y="423" class="node" text-anchor="middle">Processing</text>
+
+  <rect x="375" y="335" width="465" height="140" rx="14" fill="#EAF6EF" stroke="#81AF91"/>
+  <rect x="395" y="355" width="150" height="38" rx="19" fill="#2D7D46"/>
+  <text x="470" y="380" class="node" text-anchor="middle">ESP32</text>
+  <text x="470" y="420" class="item" text-anchor="middle">24 × 4 sensor window</text>
+  <text x="470" y="447" class="small" text-anchor="middle">Full-INT8 TFLM forecast</text>
+  <line x1="560" y1="355" x2="560" y2="455" stroke="#A5C5AE" stroke-width="2"/>
+  <text x="680" y="402" class="item" text-anchor="middle">Scenario basin projection</text>
+  <text x="680" y="432" class="small" text-anchor="middle">Adaptive gate policy + deadband</text>
+
+  <rect x="870" y="335" width="595" height="140" rx="14" fill="#FFF7E6" stroke="#DDB56A"/>
+  <rect x="890" y="355" width="190" height="38" rx="19" fill="#C58A14"/>
+  <text x="985" y="380" class="node" text-anchor="middle">Raspberry Pi</text>
+  <text x="985" y="420" class="item" text-anchor="middle">YOLOv8s inference</text>
+  <text x="985" y="447" class="small" text-anchor="middle">640 px · plastic / rock</text>
+  <line x1="1110" y1="355" x2="1110" y2="455" stroke="#DFC98F" stroke-width="2"/>
+  <text x="1275" y="402" class="item" text-anchor="middle">OpenCV coverage + severity</text>
+  <text x="1275" y="432" class="small" text-anchor="middle">CLEAR / WARNING / BLOCKAGE</text>
+
+  <path d="M800 505 L800 545" fill="none" stroke="#3182CE" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3 -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="545" width="1440" height="130" rx="18" fill="#FFFFFF" stroke="#B8C7DA" stroke-width="2"/>
+  </g>
+  <rect x="80" y="545" width="260" height="130" rx="18" fill="#17365D"/>
+  <text x="210" y="592" class="node" text-anchor="middle">STAGE 3</text>
+  <text x="210" y="627" class="node" text-anchor="middle">Communication</text>
+  <text x="210" y="652" class="node" text-anchor="middle">and Telemetry</text>
+  <rect x="385" y="575" width="330" height="70" rx="12" fill="#EDF7FC" stroke="#75A7C6"/>
+  <text x="550" y="604" class="item" text-anchor="middle">Local serial / status bus</text>
+  <text x="550" y="631" class="small" text-anchor="middle">ESP32 safety decision remains local</text>
+  <rect x="745" y="575" width="330" height="70" rx="12" fill="#EDF7FC" stroke="#75A7C6"/>
+  <text x="910" y="604" class="item" text-anchor="middle">MQTT / JSONL telemetry</text>
+  <text x="910" y="631" class="small" text-anchor="middle">Pi debris alerts and system logs</text>
+  <rect x="1105" y="575" width="365" height="70" rx="12" fill="#F2F2F7" stroke="#9F9FB2"/>
+  <text x="1287" y="604" class="item" text-anchor="middle">Optional LoRaWAN gateway</text>
+  <text x="1287" y="631" class="small" text-anchor="middle">remote monitoring and fail-safe alerts</text>
+
+  <path d="M800 675 L800 715" fill="none" stroke="#3182CE" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4 -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="715" width="1440" height="130" rx="18" fill="#FFFFFF" stroke="#B8C7DA" stroke-width="2"/>
+  </g>
+  <rect x="80" y="715" width="260" height="130" rx="18" fill="#17365D"/>
+  <text x="210" y="762" class="node" text-anchor="middle">STAGE 4</text>
+  <text x="210" y="797" class="node" text-anchor="middle">Action Layer</text>
+  <rect x="385" y="745" width="250" height="70" rx="12" fill="#FDECEC" stroke="#CD8888"/>
+  <text x="510" y="774" class="item" text-anchor="middle">Two gate servos</text>
+  <text x="510" y="801" class="small" text-anchor="middle">PWM · independent endpoints</text>
+  <rect x="665" y="745" width="250" height="70" rx="12" fill="#FDECEC" stroke="#CD8888"/>
+  <text x="790" y="774" class="item" text-anchor="middle">Safe local response</text>
+  <text x="790" y="801" class="small" text-anchor="middle">fail-open on invalid level</text>
+  <rect x="945" y="745" width="250" height="70" rx="12" fill="#FDECEC" stroke="#CD8888"/>
+  <text x="1070" y="774" class="item" text-anchor="middle">Maintenance alert</text>
+  <text x="1070" y="801" class="small" text-anchor="middle">rock / plastic blockage status</text>
+  <rect x="1225" y="745" width="245" height="70" rx="12" fill="#F2F2F7" stroke="#9F9FB2"/>
+  <text x="1347" y="774" class="item" text-anchor="middle">Field readiness</text>
+  <text x="1347" y="801" class="small" text-anchor="middle">size actuators and safety interlocks</text>
+</svg>

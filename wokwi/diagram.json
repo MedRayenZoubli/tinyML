@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "tinyML",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0 },
+    { "type": "wokwi-potentiometer", "id": "rain", "top": -100, "left": 300, "attrs": { "value": "0" } },
+    { "type": "wokwi-potentiometer", "id": "volume", "top": 0, "left": 300, "attrs": { "value": "50" } },
+    { "type": "wokwi-potentiometer", "id": "discharge", "top": 100, "left": 300, "attrs": { "value": "100" } },
+    { "type": "wokwi-potentiometer", "id": "soil", "top": 200, "left": 300, "attrs": { "value": "0" } },
+    { "type": "wokwi-text", "id": "mock_data_label", "top": -180, "left": 220, "attrs": { "text": "Mock rainflow scenarios: adjust these potentiometers to demonstrate gate response" } },
+    { "type": "wokwi-text", "id": "rain_label", "top": -100, "left": 430, "attrs": { "text": "Rainfall (mm/hr)" } },
+    { "type": "wokwi-text", "id": "volume_label", "top": 0, "left": 430, "attrs": { "text": "Basin volume (m3)" } },
+    { "type": "wokwi-text", "id": "discharge_label", "top": 100, "left": 430, "attrs": { "text": "Discharge (m3/s)" } },
+    { "type": "wokwi-text", "id": "soil_label", "top": 200, "left": 430, "attrs": { "text": "Soil saturation (%)" } },
+    { "type": "wokwi-servo", "id": "gate_a", "top": 0, "left": 550, "attrs": { "horn": "single" } },
+    { "type": "wokwi-servo", "id": "gate_b", "top": 150, "left": 550, "attrs": { "horn": "single" } } ],
+"connections": [
+  [ "rain:SIG", "esp:D34", "green", [] ],
+  [ "volume:SIG", "esp:D35", "green", [] ],
+  [ "discharge:SIG", "esp:D32", "green", [] ],
+  [ "soil:SIG", "esp:D33", "green", [] ],
+  [ "rain:VCC", "esp:3V3", "red", [] ],
+  [ "volume:VCC", "esp:3V3", "red", [] ],
+  [ "discharge:VCC", "esp:3V3", "red", [] ],
+  [ "soil:VCC", "esp:3V3", "red", [] ],
+  [ "rain:GND", "esp:GND.1", "black", [] ],
+  [ "volume:GND", "esp:GND.1", "black", [] ],
+  [ "discharge:GND", "esp:GND.1", "black", [] ],
+  [ "soil:GND", "esp:GND.1", "black", [] ],
+  [ "gate_a:PWM", "esp:D25", "orange", [] ],
+  [ "gate_b:PWM", "esp:D26", "orange", [] ],
+  [ "gate_a:V+", "esp:VIN", "red", [] ],
+  [ "gate_b:V+", "esp:VIN", "red", [] ],
+  [ "gate_a:GND", "esp:GND.1", "black", [] ],
+  [ "gate_b:GND", "esp:GND.1", "black", [] ]
+
+  ]
+}
